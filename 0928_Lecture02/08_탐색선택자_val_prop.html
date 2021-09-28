@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 객체 조작 및 생성 </title>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+	$(function( ){
+		// val() : 해당 요소의 값 불러오기
+		var result_1 = $("#user_name").val();
+		console.log(result_1);
+
+		// val("") : 해당 요소 값 수정
+		$("#user_id").val("javascript");
+
+		// prop("") : 매개변수로 다양한 기능 구성 - defaultValue : 해당 요소의 기본 값 불러오기
+		var result_2 = $("#user_id").prop("defaultValue"); 
+		console.log(result_2);
+		// 실제로는 javascript가 보이지만 prop을 이용하면 기존 태그의 value값을 알아낼 수 있음.
+	});
+</script>
+</head>
+<body>
+	<h1>객체 조작 및 생성</h1>
+	<form action="#" id="form_1">
+		<p>
+			<label for="user_name">이름</label> 
+			<input type="text" name="user_name"
+				id="user_name" value="용대리">
+		</p>
+		<p>
+			<label for="user_id">아이디</label> 
+			<input type="text" name="user_id"
+				id="user_id" value="hello">
+		</p>
+	</form>
+</body>
+</html>

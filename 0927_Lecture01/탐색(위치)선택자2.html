@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+            $(function(){
+                // $("li:first-of-type").css("background-color","#f0f");
+                // $("li:last-of-type").css("background-color","#ff0");
+
+                $("#menu1 li:nth-child(1)").css("background-color","#ff0"); //nth:수열대상 지정
+                $("#menu1 li:nth-child(2n)").css("background-color","#f00"); //2의배수
+
+                $("#menu2 li:nth-child(2n-1)").css("background-color","skyblue"); //2의배수
+            });
+        </script>
+    </head>
+    <body>
+       <h1>탐색 선택자</h1>
+       <ul id="menu1">
+            <li>내용1-1</li>
+            <li>내용1-2</li>
+            <li>내용1-3</li>
+            <li>내용1-4</li>
+       </ul>
+       <ul id="menu2">
+            <li>내용2-1</li>
+            <li>내용2-2</li>
+            <li>내용2-3</li>
+       </ul>
+    </body>
+</html>

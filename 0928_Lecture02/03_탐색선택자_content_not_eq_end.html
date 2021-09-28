@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 탐색 선택자 </title>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+	$(function () {
+		// contains() : 태그 내부에 지정 내용(string)을 가지고 있는지 확인 
+		$("#inner_1 p:contains(내용1)").css({ "background-color": "#ff0" });
+		// has() : 태그를 가지고 있는지 확인
+		$("#inner_1 p:has(strong)").css({ "background-color": "#0ff" });
+		// contents() : 태그 내부의 가장 가까운 자식 선택
+		$("#outer_wrap").contents().css({ "border": "1px dashed #00f" });
+		// not() : 반대 - :fisrt 첫번째가 아닌 것들에게 초록배경
+		$("#inner_2 p").not(":first").css({ "background-color": "#0f0" });
+		// eq() : 0부터 시작(배열) 몇번째 선택
+		// end() : 0부터 선택자리까지 선택
+		$("#inner_2 p").eq(2).end().css({ "color": "#f00" });
+	});
+</script>
+</head>
+<body>
+	<div id="outer_wrap">
+		<h1>콘텐츠 탐색 선택자</h1>
+		<section id="inner_1">
+			<h1>contains( ), contents( ), has( )</h1>
+			<p><span>내용1</span></p>
+			<p><strong>내용2</strong></p>
+			<p><span>내용3</span></p>
+		</section>
+		<section id="inner_2">
+			<h1>not( ), end( )</h1>
+			<p>내용4</p>
+			<p>내용5</p>
+			<p>내용6</p>
+		</section>
+	</div>
+</body>
+</html>

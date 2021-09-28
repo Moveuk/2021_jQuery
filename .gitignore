@@ -1,0 +1,12 @@
+### Workspace ###
+.metadata
+Servers/
+
+### STS ###
+target/
+
+### jQuery ###
+source/
+
+
+### etc ###

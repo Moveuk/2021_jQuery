@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+            $(function(){
+               var style_1 = {
+                "background-color":"#0ff",
+                "border":"2px solid #f00"
+               } 
+
+               var style_2 = {
+                "background-color":"#ff0",
+                "border":"2px solid #0ff"
+               }
+
+            //    $(".txt").prev().css(style_1); //형
+            //    $(".txt").prevAll().css(style_1); //모든형
+            //    $(".txt  + p").css(style_2);
+
+            //    $(".txt").next().next().css(style_2); //동생의 동생까지
+            //    $(".txt").nextAll().css(style_2);
+
+            //    $(".txt").siblings().css(style_1); //전체 형제요소 선택
+               $(".txt").prevUntil(".title").css(style_1); //~형 요소 중 ~까지만(until은 포함안됌)
+               $(".txt").nextUntil(".txt6").css(style_2);
+            });
+        </script>
+    </head>
+    <body>
+       <div id="wrap">
+            <h1 class="title">인접 관계 선택자</h1>
+            <p>내용1</p>
+            <p class="txt">내용2</p>
+            <p>내용3</p>
+            <p class="txt6">내용4</p>
+       </div>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+            $(function(){
+               var arr = [
+                    {"title":"다음","url":"www,daum.net"}, //key, value
+                    {"title":"구글","url":"www,google.com"},
+                ]
+
+                $(arr).each(function(i, o) {
+                    console.log(i + ":", o)
+                });
+            });
+        </script>
+    </head>
+    <body>
+       <h1>반복 선택자</h1>
+       <ul id="menu1">
+            <li>내용1-1</li>
+            <li>내용1-2</li>
+            <li>내용1-3</li>
+            <li>내용1-4</li>
+       </ul>
+       <ul id="menu2">
+            <li>내용2-1</li>
+            <li>내용2-2</li>
+       </ul>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+            $(function(){
+               var obj = [
+                    {"area":"서울"}, //key, value
+                    {"area":"부산"},
+                    {"area":"전주"}
+                ]
+
+                $(obj).each(function(i, o) {
+                    console.log(i + ":", o)
+                });
+
+                $.each($("#menu2 li"),function(i,o){
+                    console.log(i + ":", o)
+                });
+
+                $.each($("#menu2 li"),function(index){
+                    console.log(index + ":", $(this)); //this: menu2 li(선택자)
+                });
+
+                // obj[0].area
+                // obj[1].area
+                // obj[2].area
+
+                // var obj2 = {"area":"서울","area2":"부산"}
+                // obj2.area;
+                // obj2.area2;
+            });
+        </script>
+    </head>
+    <body>
+       <h1>반복 선택자</h1>
+       <ul id="menu1">
+            <li>내용1-1</li>
+            <li>내용1-2</li>
+            <li>내용1-3</li>
+            <li>내용1-4</li>
+       </ul>
+       <ul id="menu2">
+            <li>내용2-1</li>
+            <li>내용2-2</li>
+       </ul>
+    </body>
+</html>

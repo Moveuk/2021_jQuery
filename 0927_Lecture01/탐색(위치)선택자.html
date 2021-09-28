@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+            $(function(){
+                //$("#menu li:first").css("background-color","#ff0"); //가장 첫번쨰
+                // $("#menu li").first().css("background-color","#ff0"); //가장 첫번쨰
+
+
+                // // $("#menu li:last").css("background-color","#0ff"); //가장 마지막
+                // $("#menu li").last().css("background-color","#0ff"); //가장 마지막
+
+                // $("#menu li:even").css("background-color","#0ff"); //짝수인덱스
+                // $("#menu li:odd").css("background-color","#ff0"); //홀수인덱스
+
+                $("#menu li").eq(2).css("background-color","#0ff"); //인덱스번호
+                $("#menu li:eq(2)").css("background-color","#0ff"); 
+
+                $("#menu li:lt(2)").css("background-color","#ff0"); //~보다 작은(미만)
+                $("#menu li:gt(2)").css("background-color","#f0f"); //~보다 큰(초과)
+
+            });
+        </script>
+    </head>
+    <body>
+       <h1>탐색 선택자</h1>
+       <ul id="menu">
+            <li>내용1</li>
+            <li>내용2</li>
+            <li>내용3</li>
+            <li>내용4</li>
+            <li>내용5</li>
+       </ul>
+    </body>
+</html>
