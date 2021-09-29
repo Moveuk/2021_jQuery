@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 객체 조작 및 생성 </title>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+	$(function( ){
+		// childeren() : 지정 요소의 자식들 선택
+		// clone() : 지정 요소의 복제
+		var copyObj = $(".box1").children().clone();
+
+		// remove() : 지정요소의 삭제
+		$(".box2").remove( );
+
+		// empty() : 지정 요소 하위 공백화
+		$(".box3").empty( );
+		// append("내용") : 지정 요소 내부에 "내용" 추가
+		$(".box3").append(copyObj);
+	});
+</script>
+</head>
+<body>
+	<div class="box1">
+		<p>내용1</p>
+		<p>내용2</p>
+	</div>
+	<div class="box2">
+		<p>내용3</p>
+		<p>내용4</p>
+	</div>
+	<div class="box3">
+		<p>내용5</p>
+		<p>내용6</p>
+	</div>
+</body>
+</html>

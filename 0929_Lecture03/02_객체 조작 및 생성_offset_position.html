@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 객체 조작 및 생성 </title>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+	$(function( ){
+        // 객체를 변수에 초기화
+		var $txt1 = $(".txt_1 span"),
+			$txt2 = $(".txt_2 span"),
+			$box = $(".box");
+
+        // 객체의 위치 값을 변수에 초기화
+		var off_t = $box.offset().top; //100 document기준
+		var pos_t = $box.position().top; //50 기준을 잡는 부모태그 기준
+
+        // 위치값을 출력
+		$txt1.text(off_t);
+		$txt2.text(pos_t);    
+	});
+</script>
+<style>
+	*{margin:0;padding:0;}
+	#box_wrap{
+		width:300px;
+		height:200px;
+		margin:50px auto 0;
+		position: relative;
+		background-color:#ccc;
+	}
+	.box{
+		width:50px;height:50px;
+		position:absolute;
+		left:100px;top:50px;
+		background-color:#f00;
+	}
+</style>
+</head>
+<body>
+	<div id="box_wrap">
+		<p class="box">박스</p>
+	</div>
+	<p class="txt_1">절대 top위칫값: <span></span></p>
+	<p class="txt_2">상대 top위칫값: <span></span></p>
+</body>
+</html>

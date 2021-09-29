@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 객체 조작 및 생성 </title>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+	$(function( ){
+        // appendTo("기준") : "기준"의 하위 마지막 요소로 내용 추가
+		$("<li>appendTo</li>").appendTo("#listZone");
+        // prepend("내용") : 기준의 하위요소에 처음 요소로 "내용" 추가
+  		$("#listZone").prepend("<li>prepend</li>");
+	});
+</script>
+</head>
+<body>
+	<ul id="listZone">
+		<li>리스트</li>
+	</ul>
+</body>
+</html>
