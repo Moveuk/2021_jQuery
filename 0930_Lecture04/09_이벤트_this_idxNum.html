@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>      
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(function(){
+    // 첫번째 리스트 기능 추가
+	$(".menuWrap_1 a").on("click", function(e) {
+        // preventDefault : a태그 기능 제거
+		e.preventDefault();
+        // 클릭시 모든 a태그 배경색 노란색으로 변경
+		$(".menuWrap_1 a").css({"background-color":"#ff0"});
+        // this : 이벤트를 부른 요소의 css(배경)만 변경
+		$(this).css({"background-color":"#0f0"});
+	});
+    
+    // 두번째 리스트 기능 추가
+	$(".menuWrap_2 a").on("click", function(e) {
+        // preventDefault : a태그 기능 제거
+		e.preventDefault();
+        // 클릭시 모든 a태그 배경색 노란색으로 변경
+		$(".menuWrap_2 a").css({"background-color":"#ff0"});
+        // this : 이벤트가 구현된 것의 인덱스 번호를 idx에 저장
+		var idx = $(".menuWrap_2 a").index(this);
+        // eq("번호") : 자식 요소들 중 인덱스 번호로 뽑아옴
+        $(".menuWrap_2 a").eq(idx).css({"background-color":"#0f0"});    
+        // 마지막 p태그에 누른 a 태그 인덱스 번호 출력
+        $(".idxNum").text(idx);
+	});
+});
+</script>
+</head>
+<body>
+    <h2>$(this)</h2>
+    <ul class="menuWrap_1">
+                    <li><a href="#">메뉴1</a></li>
+                    <li><a href="#">메뉴2</a></li>
+                    <li><a href="#">메뉴3</a></li>
+    </ul>
+    <h2>Index( )</h2>   
+    <ul class="menuWrap_2">
+                    <li><a href="#">메뉴4</a></li>
+                    <li><a href="#">메뉴5</a></li>
+                    <li><a href="#">메뉴6</a></li>
+    </ul>
+    <p class="idxNum"></p>
+</body>
+</html>

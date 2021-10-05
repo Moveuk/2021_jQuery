@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title> 객체 조작 및 생성 </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(function () {
+            // on() : 이벤트 효과를 줄 때 사용.
+            // click(function(){"효과"}) : 클릭시 해당 태그에 "효과를 줄 수 있음"
+            $(".btn1").click(function () {
+                $(".btn1").parent().next().css({ "color": "#f00" });
+            });
+            
+            // click(function(){"효과"}) : 클릭시 해당 태그에 "효과를 줄 수 있음"
+            // focus : 브라우저 상에서 tab을 눌러서 선택되었을 때
+            $(".btn2").on({
+                "mouseover focus": function () {
+                    $(".btn2").parent().next().css({ "color": "#0f0" });
+                },
+                "mouseout blur": function () {
+                    $(".btn2").parent().next().css({ "color": "#000" })
+                }
+            });
+
+            // click() : 실행시 클릭 효과를 자동으로 줄 수 있음.
+            //$(".btn1").click();
+            // mouseover() : 실행시 마우스 오버 효과를 자동으로 줄 수 있음.
+            //$(".btn2").trigger("mouseover");
+
+            // off() : 효과 끄기
+            //$(".btn1").off("click");
+            //$(".btn2").off("mouseover focus");
+        });
+    </script>
+    <style>
+        * {
+            padding: 0;
+        }
+
+        #p1,
+        #p2 {
+            width: 100px;
+            height: 50px;
+            padding: 20px;
+            border: 5px solid #000;
+            background-color: #ff0;
+        }
+    </style>
+</head>
+
+<body>
+    <p><button class="btn1">버튼1</button></p>
+    <p>내용1</p>
+    <p><button class="btn2">버튼2</button></p>
+    <p>내용2</p>
+</body>
+
+</html>

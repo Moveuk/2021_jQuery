@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>      
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(function( ) {
+    // 자바스크립트 상에서는 브라우저 자체를 'window'로 인식한다.
+    // 그러므로 스크롤 이벤트를 사용할때는 선택자를 'window'로 설정한다.
+    // scrollTop(), scrollLeft() : 스크롤의 위치값을 받을 수 있다.
+    $(window).on("scroll",function(){
+        var sc_top = $(this).scrollTop();
+        var sc_left = $(this).scrollLeft();
+
+        $(".top").text(sc_top);
+        $(".left").text(sc_left);
+        
+        // 패럴록스 효과 : 스크롤이 내려가면서 위치값에 따라 동적인 효과를 주는 것
+        if(sc_top < 100){
+            $("body").css({"background":"whirw"});
+        } else if (sc_top < 200) {
+            $("body").css({"background":"yellow"});
+        } else if (sc_top < 300) {
+            $("body").css({"background":"green"});
+        } else if (sc_top < 400) {
+            $("body").css({"background":"blue"});
+        };
+    });
+});
+</script>
+<style>
+	body{
+		height:10000px;
+		width:5000px;
+	}
+	#wrap{
+		position: fixed;
+		left: 10px; top: 10px;
+	}
+</style>
+</head>
+<body>
+    <div id="wrap">
+        <p>scrollTop: <span class="top">0</span>px</p>
+        <p>scrollLeft: <span class="left">0</span>px</p>
+    </div>
+</body>
+</html>

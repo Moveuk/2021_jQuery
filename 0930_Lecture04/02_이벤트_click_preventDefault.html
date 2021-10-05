@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>      
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(function( ) {
+    // preventDefault() : 본연의 기능(html body에 작성되어있던 속성 내용)을 제거함.
+	// a의 링크는 작동하지 않고 txt1에 배경색만 바뀜.
+    $(".btn1").on("click", function(e){
+		e.preventDefault( );
+		$(".txt1").css({"background-color":"#ff0"});
+	});
+    // preventDefault를 사용하지 않아서 a태그 클릭시 페이지 이동
+	$(".btn2").on("click", function(e){
+		$(".txt2").css({"background-color":"#0ff"});
+		$(".txt2").text("페이지 이동됨");
+	});
+    // dblclick : double click 이벤트 구현
+	$(".btn3").on("dblclick", function(){
+		$(".txt3").css({"background-color":"#0f0"});
+	});   
+});
+</script>
+</head>
+<body>
+	<p><a href="http://www.easyspub.co.kr/" class="btn1">링크 버튼1</a></p>
+	<p class="txt1">내용1</p>
+	<p><a href="http://www.easyspub.co.kr/" class="btn2">링크 버튼2</a></p>
+	<p class="txt2">내용2</p>
+	<p><button class="btn3">더블클릭 이벤트 버튼3</button></p>
+	<p class="txt3">내용3</p>
+</body>
+</html>
