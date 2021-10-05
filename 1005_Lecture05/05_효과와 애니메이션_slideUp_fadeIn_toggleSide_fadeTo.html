@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 효과와 애니메이션 </title>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(function( ) {
+    // 초기 fadeIn 버튼은 사라져 있다.
+	$(".btn2").hide();
+
+    // slideUp(효과 지속 시간, 효과 구간 속도, 익명 함수(옵션 없어도됨))
+    // 효과 지속 시간 : 몇초동안 슬라이드가 될지
+    // 효과 구간 속도 : 슬라이드되어 올라가는 구간 속도를 설정(가속 변화할지, 동속 변화할지)
+    // 익명 함수 : 슬라이드가 된 이후 되어야할 기능 구성
+	$(".btn1").on("click", function( ) {
+        // linear : 등속 변화
+		$(".box").slideUp(1000, "linear", function( ) {
+            // 버튼이 2개이나 실제로 보이는 건 1개로 스위치 되게 된다.
+			$(".btn1").hide( );
+			$(".btn2").show( );
+		});
+	});
+
+    // fadeIn : 투명도 0에서 서서히 드러나도록
+	$(".btn2").on("click", function( ) {
+        // swing : 
+		$(".box").fadeIn(1000, "swing", function( ) {
+			$(".btn2").hide( );
+			$(".btn1").show( );
+		});
+	});
+
+    // slideToggle(효과 지속 시간, 효과 구간 속도, 익명 함수(옵션 없어도됨))
+    // 단순 토글 효과
+	$(".btn3").on("click", function( ) {
+		$(".box").slideToggle(1000, "linear");
+	});
+
+    // fadeTo(효과 발동 속도, 목적 투명도) : 
+    // 상수 값 존재 : fast slow
+	$(".btn4").on("click", function( ) {
+		$(".box").fadeTo("fast", 0.3);
+	});
+
+    //
+	$(".btn5").on("click", function( ) {
+		$(".box").fadeTo("slow", 1);
+	});
+
+});
+</script>
+<style>
+	.content{
+		width:400px;
+		background-color: #eee;
+	}
+</style>
+</head>
+<body>
+	<p>
+		<button class="btn1">slideUp</button>
+		<button class="btn2">fadeIn</button>
+	</p>
+	<p>
+		<button class="btn3">toggleSide</button>
+	</p> 
+	<p>
+		<button class="btn4">fadeTo(0.3)</button>
+		<button class="btn5">fadeTo(1)</button>
+	</p>   
+	<div class="box">
+		<div class="content">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas feugiat consectetur nibh, ut luctus urna placerat non. Phasellus consectetur nunc nec mi feugiat egestas. Pellentesque et consectetur mauris, sed rutrum est. Etiam odio nunc, ornare quis urna sed, fermentum fermentum augue. Nam imperdiet vestibulum ipsum quis feugiat. Nunc non pellentesque diam, nec tempor nibh. Ut consequat sem sit amet ullamcorper sodales.
+		</div>
+	</div>
+</body>
+</html>

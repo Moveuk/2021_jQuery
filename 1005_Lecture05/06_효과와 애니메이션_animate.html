@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 효과와 애니메이션 </title>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(function( ) {
+    // animate({효과}, 작동 시간, 효과 속도, 익명함수) : 애니메이션을 주기 위해 자주 사용하는 기능
+	$(".btn1").on("click", function( ) {
+        // 마진 왼쪽 500, 폰트 30인채로 2초동안 등속으로 애니메이션 준 후 alert 발동
+		$(".txt1").animate({
+			marginLeft:"500px",
+			fontSize:"30px"
+		},
+		2000, "linear", function( ) {
+			alert("모션 완료!"); 
+		});
+	});
+
+    // 클릭할 때마다 마진값을 50씩 늘려서 오른쪽으로 이동하는 것처럼 보이게.
+    $(".btn2").on("click", function( ) {
+		$(".txt2").animate({
+			marginLeft:"+=50px"
+		},1000);
+	}); 
+});
+</script>
+<style>
+	.txt1{background-color: aqua;}
+	.txt2{background-color: pink;}
+</style>
+</head>
+<body>
+	<p><button class="btn1">버튼1</button></p>
+	<span class="txt1">"500px" 이동</span>
+	<p><button class="btn2">버튼2</button></p>
+	<span class="txt2">"50px"씩 이동</span>
+</body>
+</html>

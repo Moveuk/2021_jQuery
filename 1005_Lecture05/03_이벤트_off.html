@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>	
+<script>
+$(function(){
+    // 이벤트 제거
+    // 버튼1에 마우스 오버시 hello 창 오픈(기본형 이벤트)
+	$(".btn_1").on("mouseover", function() {
+		alert("HELLO!");
+	});
+    // 버튼 2에는 동적으로 라이브 이벤트를 추가한다.
+	$(document).on("mouseover", ".btn_2", function() {
+		alert("WELCOME!");
+	});    
+    // 버튼 2 태그 변수에 초기화
+	var btn_2 = $("<p><button class=\"btn_2\">버튼2</button></p>");
+    // 버튼 2 태그 하위요소에 추가(append : 마지막 자식으로 추가)
+	$("#wrap").append(btn_2);
+
+    // 버튼1 클릭시 마우스 오버 기능 제거
+	$(".del_1").on("click", function(){
+		$(".btn_1").off("mouseover");
+	});
+    // 버튼2 클릭시 마우스 오버 기능 라이브로 제거(html 코드 상에서는 없는 버튼)
+    // 라이브 삭제시에는 라이브 이벤트 생성처럼 부모 요소 기준으로 삭제해야한다.
+	$(".del_2").on("click", function(){
+		$(document).off("mouseover",".btn_2");
+	});
+});
+</script>
+</head>
+<body>
+<div id="wrap">
+	<p><button class="btn_1">버튼1</button></p>
+</div>
+<p>
+	<button class="del_1">버튼1 이벤트 해지</button> 
+	<button class="del_2">버튼2 이벤트 해지</button>
+</p>
+</body>
+</html>

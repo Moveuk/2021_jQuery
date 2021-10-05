@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>	
+<script>
+$(function(){
+    var fontSize = 12;
+    var body = $("body");
+
+    // 글자 사이즈 바꾸기
+    $(".zoom button").on("click",function(){
+        var btn_index = $(".zoom button").index(this);
+
+        if(btn_index == 0) {
+            fontSize++;
+            body.css("fontSize",fontSize+"px");
+        } else if(btn_index == 1) {
+            fontSize=12;
+            body.css("fontSize",fontSize+"px");
+        } else {
+            fontSize++;
+            body.css("fontSize",fontSize+"px");
+        }
+    });
+
+    // 글꼴 바꾸기
+    $(".f_style #fs").on("change",function(){
+        var font = $("#fs option:selected").val();
+        console.log(font);
+        $("body").css({fontFamily:font});
+    });
+
+    // 글자 색상 바꾸기
+    $(".f_color input").on("click",function(){
+        $("body").css({color:$(this).val()});
+    });
+});
+</script>
+<style type="text/css">
+    *{margin:0;padding:0;}
+    body{font:12px dotum,"돋움",sans-serif;margin:20px;}
+    #f_wrap dt{font-weight:bold;margin-top:10px;}
+    #txt_wrap{width:90%;margin-top:20px;}
+  </style>
+  </head>
+  <body>
+   <div id="f_wrap">
+      <dl>
+        <dt>글자크기</dt>
+        <dd class="zoom">
+          <button class="sizeUp">+</button>
+          <button class="size1x">0</button>
+          <button class="sizeDown">-</button>
+        </dd>
+        <dt>글자모양</dt>
+        <dd class="f_style">
+            <select name="fs" id="fs">
+              <option value="dotum,'돋움',sans-serif">돋움</option>
+              <option value="gulim, '굴림', sans-serif">굴림</option>
+              <option value="magun gothic, '맑은고딕', sans-serif">맑은고딕</option>
+              <option value="magun gothic, '맑은고딕', serif">궁서</option>
+            </select>
+        </dd>
+        <dt>글자색</dt>
+        <dd class="f_color">
+            <input type="radio" name="color" value="red"><span style="color: red;"> 빨강 </span>
+            <input type="radio" name="color" value="green"><span style="color: green;"> 초록 </span>
+            <input type="radio" name="color" value="blue"><span style="color: blue;"> 파랑 </span>
+        </dd>
+      </dl>
+   </div>
+   <p id="txt_wrap">
+   키보든 접근성이란 마우스 이벤트를 등록했을 때 만일 현재 마우스가 없더라도 제이쿼리로 만든 최소한의 기능을 키보드 만으로 사용할 수 있도록 보장하는 것을 일컬어 키보드 접근성이라 합니다. 앞서 마우스 이벤트에 대응하는 대표적인 키보드 이벤트에는 focus() 와 blur()가 있었습니다. focus() 이벤트 메서드는 선택한 요소에 포커스가 이동되면 이벤트가 발생되었고, 그와 반대로 blur()  이벤트 메서드는 선택한 요소에 생성된 포커스가 다른 요소로 이동되었을 때 이벤트가 발생되었습니다. 그래서 키보드 접근성을 고려한 마우스 이벤트를 등록할 땐 포커스가 이동 가능한 요소인....
+   </p>
+  </body>
+  </html>
