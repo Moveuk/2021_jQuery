@@ -114,6 +114,8 @@ Ajax(Asynchronous JavaScript and XML, 에이잭스)는 비동기적인 웹 애�
  ## 2. jQuery Ajax 처리 방식
  
  A 파일 내용을 B 파일로 가져와서 출력하는 예제를 다루어 볼 것이다.
+ 
+ https://mockaroo.com/ 에서 json파일 xml 파일 등으로 샘플 데이터를 받아볼 수 있다.
 
 <br>
 
