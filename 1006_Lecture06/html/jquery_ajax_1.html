@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> Ajax </title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(function() {
+    // load를 통해 다른 페이지의 정보를 불러올 수 있다.
+	$("#newsWrap_1").load("jquery_ajax_news.html #news_1");
+	
+	$("#newsWrap_2").load("jquery_ajax_news.html #news_2");
+});
+</script>
+</head>
+<body>
+   <h1>LOAD 1</h1>
+   <div id="newsWrap_1"></div>
+   <h1>LOAD 2</h1>   
+   <div id="newsWrap_2"></div>
+</body>
+</html>
