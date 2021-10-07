@@ -1,4 +1,4 @@
-# Lecture06 이벤트
+# Lecture06 이벤트 & jQuery Ajax 처리 방식
 Key Word : stop, delay, Ajax, JSON, jQuery Ajax 처리 방식
 
 <hr/>
