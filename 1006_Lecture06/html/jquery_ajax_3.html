@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title> Ajax </title>
-<script src="js/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
 $(function() {
 	$.ajax({
@@ -15,21 +15,17 @@ $(function() {
 			if($data.length > 0) {
 				var tb = $("<table />");
                 // find가 배열로 보냈으므로 each를 통해 하나씩 분리함
+				// xml에는 수많은 정보가 들어있음.
 				$.each($data, function(i, o) {
-					var $id = 
-					$(o).find("id").text();
+					var $id = $(o).find("id").text();
 					
-					var $first_name = 
-					$(o).find("first_name").text();
+					var $first_name = $(o).find("first_name").text();
 					
-					var $last_name = 
-					$(o).find("last_name").text();
+					var $last_name = $(o).find("last_name").text();
 					
-					var $email = 
-					$(o).find("email").text();
+					var $email = $(o).find("email").text();
 					
-					var $gender = 
-					$(o).find("gender").text();
+					var $gender = $(o).find("gender").text();
 
 					var row = $("<tr />").append(
 						$("<td />").text($id),

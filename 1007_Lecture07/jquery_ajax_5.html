@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> Ajax </title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(function() {
+	$.ajax({
+		url:"news.php",
+		dataType:"xml",
+		success: function(data) {
+            // 배열로 item들을 받아와서 items에 넣음
+			var $items = $(data).find("item");
+
+            // 아이템이 있으면
+			if($items.length > 0) {
+				$items = $items.slice(0,10);
+				var $ulTag = $("<ul />");
+                // 각각 뿌려줌
+				$.each($items, function(i, o) {
+					var $title = $(o).find("title").text();
+					var $link = $(o).find("link").text();
+					
+                    // 링크 속성 넣음
+					var $aTag = $("<a />")
+					.attr({
+						"href":$link,
+                        // 새창 열기 기능
+						"target":"_blank"
+						})
+					.text($title);
+
+                    // a태그 넣음
+					var $liTag = $("<li />")
+					.append($aTag);
+
+					$ulTag.append($liTag);
+				});
+				$(".wrap").append($ulTag);
+			}
+		}
+	});
+});
+</script>
+</head>
+<body>
+	<div class="wrap"></div>
+</body>
+</html>

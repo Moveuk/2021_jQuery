@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> Ajax </title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(function() {
+    // 향로님 기술블로그 예시
+	$.ajax({
+		url:"https://jojoldu.tistory.com/rss",
+		dataType:"xml",
+		success:function(data) {
+			console.log(data);
+		}
+	});
+});
+</script>
+</head>
+<body>
+  <div class="wrap"></div>
+</body>
+</html>
